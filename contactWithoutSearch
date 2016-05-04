@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html> 
+<body>
+<input type="text" id="name" placeholder="Name" /><br><br>
+<input type="text" id="address" placeholder="Address"><br><br />
+<input type="text" id="email" placeholder="Email Address"><br /><br>
+<input type="text" id="contact" placeholder="Contact Number" /><br><br>
+
+<input type="BUTTON" class="btn" value="Save"  onclick="insert()" />
+<input type="text" id="srch" placeholder="Search" />
+<input type="button" value="Search" onclick="searchInfo()" />
+<div id="txt" ></div>
+
+<script>
+var infoname = [];
+
+
+var nameInput = document.getElementById("name");
+var addressInput = document.getElementById("address");
+var emailInput = document.getElementById("email");
+var contactInput = document.getElementById("contact");
+
+var display = document.getElementById("txt");
+
+function insert()
+{
+    infoname.push(nameInput.value);
+    infoname.push(addressInput.value);
+    infoname.push(emailInput.value);
+    infoname.push(contactInput.value);
+    nameInput.value = "";
+   addressInput.value = "";
+   emailInput.value = "";
+   contactInput.value = "";
+display.innerHTML = "";
+  display.innerHTML += " " + infoname.join(", ");
+};
+
+
+</script>
+</body>
+</html>
